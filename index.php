@@ -14,19 +14,19 @@
 
     <div class="contenedor"> 
         <div class="card">
-        <form method="post" action="index.php">   
-            <div class="form-group">
-                <label for="email-label"> Email </label>
-                <input class="form-control" type="input" name="email" id="email-label">
-            </div>
-            <div class="form-group">
-                <label for="pass-label"> Password </label>
-                <input  class="form-control" type="password" name="password" id="pass-label">
-            </div>
-            <!-- este va al registrarse  <small  class="form-text">Do you already have an account? <a href="#">Sing up</a></small> -->
-            <input class="mybtn btn-login btn-block" type="submit" name="login" value="Log in" >
-        </form>
-        </div>
+            <form method="post" action="index.php">   
+                <div class="form-group">
+                    <label for="email-label"> Email </label>
+                    <input class="form-control" type="input" name="email" id="email-label">
+                </div>
+                <div class="form-group">
+                    <label for="pass-label"> Password </label>
+                    <input  class="form-control" type="password" name="password" id="pass-label">
+                </div>
+                <!-- este va al registrarse  <small  class="form-text">Do you already have an account? <a href="#">Sing up</a></small> -->
+                <input class="mybtn btn-login btn-block" type="submit" name="login" value="Log in" >
+            </form><!-- cierra form-->
+        </div><!-- cierra card del form-->
     </div><!-- cierro contenedor -->
 </body>
 </html>
