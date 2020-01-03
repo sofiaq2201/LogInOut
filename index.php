@@ -23,7 +23,7 @@
                     <label for="pass-label"> Password </label>
                     <input  class="form-control" type="password" name="password" id="pass-label">
                 </div>
-                <!-- este va al registrarse  <small  class="form-text">Do you already have an account? <a href="#">Sing up</a></small> -->
+                <small  class="form-text">Don't have any account? <a href="#">Sing up</a></small>
                 <input class="mybtn btn-login btn-block" type="submit" name="login" value="Log in" >
             </form><!-- cierra form-->
         </div><!-- cierra card del form-->
