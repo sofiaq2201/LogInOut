@@ -1,3 +1,34 @@
+<?php  
+include('conexion.php');
+session_start();
+$inicio_sesion = 1;
+if(isset($_POST['submit']))
+{
+    
+    $email = $_REQUEST['email'];
+    $password = $_REQUEST['password'];
+   
+    $sql="SELECT email, password FROM usuarios WHERE email = '$email' ";
+    $result=mysqli_query($conexion,$sql);
+
+     while ($row=mysqli_fetch_array($result)) 
+    {
+        $user_email = $row['email'];
+        $contra = $row['password'];
+    }
+   
+    if ($email == $user_email && $password == $contra) 
+    {
+        $_SESSION['email'] = $email;
+        //echo "inicio??sii";
+        sleep(1);
+       echo "<script>location.href='home.php';</script>"; 
+    }else{
+        $inicio_sesion = 0;
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,15 +49,21 @@
                 <div class="form-group">
                     <label for="email-label"> Email </label>
                     <input class="form-control" type="input" name="email" id="email-label">
+                    <?php 
+                    if ($inicio_sesion == 0) {
+                        echo "<small class='alert-danger'> Email or password incorrect </small>";
+                    }
+                    ?>
                 </div>
                 <div class="form-group">
                     <label for="pass-label"> Password </label>
                     <input  class="form-control" type="password" name="password" id="pass-label">
                 </div>
-                <small  class="form-text">Don't have any account? <a href="#">Sing up</a></small>
-                <input class="mybtn btn-login btn-block" type="submit" name="login" value="Log in" >
+                <small  class="form-text">Don't have any account? <a href="signup.php">Register</a></small>
+                <input class="mybtn btn-login btn-block" type="submit" name="submit" value="Login" >
             </form><!-- cierra form-->
         </div><!-- cierra card del form-->
     </div><!-- cierro contenedor -->
+
 </body>
 </html>
