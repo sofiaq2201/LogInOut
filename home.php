@@ -2,7 +2,11 @@
 include('conexion.php');
 session_start();
 
-$email = $_SESSION['email'];
+if($_SESSION['email']!==0){
+	$inicio=1;
+}else{
+	$inicio=0;
+}
 
 ?>
 <!DOCTYPE html>
@@ -20,12 +24,11 @@ $email = $_SESSION['email'];
 		<div class="contenedor">
 			<div class="card shadow">
 				<?php
-				if($email){
+				if($inicio){
 					echo "<h3>Welcome!</h3>
 						  <a href='logout.php'>Log out</a>";
 				}else {
 					echo "<h3>You didn't <a href='index.php'>log in</a></h3>";
-					
 				}
 				?>
 				

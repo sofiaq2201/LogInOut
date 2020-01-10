@@ -1,7 +1,7 @@
 <?php  
 include('conexion.php');
 session_start();
-session_destroy();
+$_SESSION['email']=0;
 $inicio_sesion = 1;
 
 if(isset($_POST['submit']))
@@ -21,7 +21,7 @@ if(isset($_POST['submit']))
    
     if ($email == $user_email && $password == $contra) 
     {
-        session_start();
+        
         $_SESSION['email'] = $email;
         //echo "inicio??sii";
         sleep(1);
